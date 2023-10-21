@@ -30,16 +30,16 @@
 
 从 $\psi(0)$ 开始。因为没有任何序数小于 $0$，我们可以忽略规则2的 $\psi$ 函数：
 $C_0(0) = \{0,1,\Omega\}$
-$C_0(1) = \{0,1,2,\Omega,\Omega+1,\Omega2\}$
-$C_0(2) = \{0,1,2,3,4,\Omega,\cdots\}$
+$C_1(0) = \{0,1,2,\Omega,\Omega+1,\Omega2\}$
+$C_2(0) = \{0,1,2,3,4,\Omega,\cdots\}$
 省略号略去的是大于 $\Omega$ 的数，最后我们得到 $C(0)$，它包含了所有自然数，以及一些大于等于 $\Omega$ 的序数。
 
 那么，$C(0)$ 中小于 $\Omega$ 的数的上界就是 $\omega$，它刚好就是由 $0$ 和 $1$ 通过有限的加法无法达到的数，$\psi(0) = \omega$。
 
 然后是 $\psi(1)$，现在我们就可以将 $\psi(0)$ 加入集合了：
-$C_0(0) = \{0,1,\Omega\}$
-$C_0(1) = \{0,1,2,\omega,\Omega,\Omega+1,\Omega2\}$
-$C_0(1) = \{0,1,2,3,4,\omega,\omega+1,\omega+2,\omega2,\Omega,\Omega+1,\Omega2\}$
+$C_0(1) = \{0,1,\Omega\}$
+$C_1(1) = \{0,1,2,\omega,\Omega,\Omega+1,\Omega2\}$
+$C_2(1) = \{0,1,2,3,4,\omega,\omega+1,\omega+2,\omega2,\Omega,\Omega+1,\Omega2\}$
 最后的 $C(1)$ 包含了有限个 $\psi(0) = \omega$ 相加。$\psi(1) = \omega^2$
 
 $\psi(2)$ 的计算中，我们将 $\psi(1)$ 包含于集合之内之内，$\psi(2)$ 就是有限个 $\psi(1)$ 相加所达不到的序数，也就是 $\psi(2) = \omega^3 = \psi(1) \omega$。
@@ -64,7 +64,7 @@ $\psi(\psi(\psi(\cdots))) = \omega^{\omega^\cdots} = \varepsilon_0 = \psi(\varep
 在此之后，$\psi(\varepsilon_0+2) = \varepsilon_0$，$\psi(\varepsilon_0+\omega) = \varepsilon_0$，$\cdots$。
 我们因为 $\varepsilon_0$ 无法被有限的表示，而被卡在了 $\psi(x)$ 的第一个不动点。
 
-这种情况一直持续下去，让我们计算 $\psi(\Omega)$。由于任何的小于 $\Omega$ 的 $\alpha$ 都有 $\psi(\alpha)<\varepsilon_0$，$\psi(\Omega) = \varepsilon_0$，看起来我们依然被卡住了。
+这种情况一直持续下去，让我们计算 $\psi(\Omega)$。由于任何的小于 $\Omega$ 的 $\alpha$ 都有 $\psi(\alpha)\le \varepsilon_0$，$\psi(\Omega) = \varepsilon_0$，看起来我们依然被卡住了。
 
 但是，在计算 $\psi(\Omega+1)$ 时，$\varepsilon_0 = \psi(\Omega)$ **是可以被有限表示的**，而 $\varepsilon_0$ 也将出现在 $C(\Omega+1)$ 中，我们有：$\psi(\Omega+1) = \varepsilon_0 \omega$，我们在 $\Omega$ 的帮助下跳出了这个不动点，而 $\psi$ 将 $\Omega$ 塌缩成 $\varepsilon_0$。
 
