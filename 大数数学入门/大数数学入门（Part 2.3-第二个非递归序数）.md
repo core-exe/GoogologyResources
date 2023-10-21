@@ -1,4 +1,4 @@
-#! https://zhuanlan.zhihu.com/p/662657625
+#! https://zhuanlan.zhihu.com/p/662657981
 # 大数数学入门（Part 2.3-第二个非递归序数）
 
 ## 定义
@@ -6,26 +6,32 @@
 如果没有 $\psi$ 和 $\Omega$，从 $\{0,1\}$ 出发进行有限次加法无法达到 $\omega$。类似的，在上一章的结尾，我们达到了 $\Omega \omega$，从 $\{0,1,\Omega\}$ 开始进行有限次加法无法达到它。
 因此，我们也可以像上一章所做的事情一样，引入另一个非递归序数 $\Omega_2$ 和另一个序数塌缩函数 $\psi_1$ 来表示 $\Omega$ 之后的更为复杂的结构：
 
-1. $C_0(x) = \{0,1,\Omega,\Omega_2\}$
-2. $C_{n+1}(x) = \{\alpha+\beta, \psi(\gamma), \psi_1(\gamma) | \alpha,\beta,\gamma \in C_n(x), \gamma < x\}$
-3. $C(x) = \bigcup_{n<\omega} C_n(x)$
-4. $\psi(x) = \sup C(x) \cap \Omega$
-5. $\psi_1(x) = \sup C(x) \cap \Omega_2$
+1. $C_0^0(x) = \{0,1,\Omega,\Omega_2\}, C_0^1(x) = \Omega \cup \{\Omega_2\}$
+2. $C_{n+1}^i(x) = \{\alpha+\beta, \psi(\gamma), \psi_1(\gamma) | \alpha,\beta,\gamma \in C_n^i(x), \gamma < x\}$
+3. $C^i(x) = \bigcup_{n<\omega} C_n^i(x)$
+4. $\psi(x) = \sup C^0(x) \cap \Omega$
+5. $\psi_1(x) = \sup C^1(x) \cap \Omega_2$
 
-我们引入了非递归序数 $\Omega_2$，和塌缩函数 $\psi_1$。与 $\psi$ 不同，$\psi_1$ 输出的是 $C(x)$ 在 $\Omega_2$ 之下的部分的上界。
+我们引入了非递归序数 $\Omega_2$，和塌缩函数 $\psi_1$。与 $\psi$ 不同，$\psi_1$ 输出的是 $C^1(x)$ 在 $\Omega_2$ 之下的部分的上界。
 
 ## 函数行为
 
 让我们注意一下新定义下的 $\psi$ 函数和 $\psi_1$ 函数的行为。
 
-$C(0) = \{0,1,2,\cdots, \Omega,\Omega2,\Omega3, \cdots, \Omega_2,\Omega_2 2 \cdots\}$ （这里并没有完全列举集合中的值），因此 $\psi(0) = \omega, \psi_1(0) = \Omega \omega$
-$C(1)$ 将 $\omega, \Omega\omega$ 加入其中，有 $\psi(1) = \omega^2, \psi_1(1) = \Omega \omega^2$
+$C^0(0) = \{0,1,2,\cdots, \Omega,\Omega2,\Omega3, \cdots, \Omega_2,\Omega_2 2 \cdots\}$ （这里并没有完全列举集合中的值），因此 $\psi(0) = \omega$。
+$C^1(0) = \{\cdots, \Omega,\Omega2,\Omega3, \cdots, \Omega_2,\Omega_2 2 \cdots\}$ （这里并没有完全列举集合中的值），因此 $\psi_1(0) = \Omega \omega$。
+
+$C^0(1)$ 将 $\omega, \Omega\omega$ 加入其中，有 $\psi(1) = \omega^2$
+$C^1(1)$ 将 $\Omega\omega$ 加入其中，有 $\psi_1(1) = \Omega\omega^2$
+
 $\psi(\omega) = \omega^\omega, \psi_1(\omega) = \Omega \omega^\omega$
 
-$\psi(\psi(\cdots)) = \psi_1(\varepsilon_0), \psi_1(\psi(\psi(\cdots))) = \psi_1(\varepsilon_0) = \Omega \varepsilon_0$，它们并没有被有限表示，因此卡住了。这样的情况一直持续到 $\psi(\Omega)$，即：$\psi(\Omega) = \varepsilon_0, \psi_1(\Omega) = \Omega \varepsilon_0$。
+$\psi(\psi(\cdots)) = \varepsilon_0, \psi_1(\psi(\psi(\cdots))) = \psi_1(\varepsilon_0) = \Omega \varepsilon_0$。前者卡住了，但是后者没有，因为按照定义，$C_1$ 含有小于 $\Omega$ 的所有数。
 
-$\psi(\Omega2) = \varepsilon_1, \psi_1(\Omega 2) = \Omega \varepsilon_1$
-$\psi(\Omega3) = \varepsilon_2, \psi_1(\Omega 3) = \Omega \varepsilon_2$
+$\psi(\Omega) = \varepsilon_0, \psi_1(\Omega) = \Omega^2$
+
+$\psi(\Omega2) = \varepsilon_1, \psi_1(\Omega 2) = \Omega^3$
+$\psi(\Omega3) = \varepsilon_2, \psi_1(\Omega 3) = \Omega^4$
 
 现在的行为也还和此前一致。这种情况下一直持续到 $\Omega \omega$。$\psi_1(0) = \Omega \omega$ 从 $x=1$ 开始就被放入集合 $C(x)$ 中了，但是此前由于 $x < \Omega \omega$，它没有办法成为 $\psi(\gamma)$ 的自变量，但是从现在开始情况就不一样了：
 
@@ -244,4 +250,4 @@ $\psi(\Omega_2 \omega)$
 这一节所定义的 OCF 并不是 BOCF，而是开头弱化版本的 MOCF。
 此外，可能有人会问关于函数下标的问题。这里的自然数下标只是一个简写，在讲到 $\Omega_\omega$ 之后时会修正为标准的下标。
 
-一般情况下，我们不经常用最左边的最标准的形式，而是用右边的形式。这个形式理解和表达起来更加简便一些，在 $\Omega^{\Omega^\cdot}$ 之后将它改变为 $\psi_1(\Omega_2)$ 即可。
+一般情况下，我们不经常用最左边的最标准的形式，而是用右边的形式。这个形式理解和表达起来更加简便一些，在 $\Omega^{\Omega^\cdots}$ 之后将它改变为 $\psi_1(\Omega_2)$ 即可。
