@@ -1,10 +1,11 @@
+#! https://zhuanlan.zhihu.com/p/662616768
 # 大数数学入门（Part 2.2-序数塌缩函数）
 
 这一节我们开始讲序数塌缩函数。序数塌缩函数的定义与此前一系列Veblen函数的逐渐强化的定义不同，而在理解之后序数塌缩函数反而是更加自然的一种序数表示方式。不仅如此，虽然序数塌缩函数的定义较为复杂，但是在理解定义之后我们会发现它的计算是简单的。
 
 ---
 
-## 定义
+## 序数塌缩函数的定义和性质
 
 让我们首先给出一个版本的序数塌缩函数的定义：
 
@@ -45,7 +46,7 @@ $\psi(2)$ 的计算中，我们将 $\psi(1)$ 包含于集合之内之内，$\psi
 
 同理，$\psi(n) = \omega^n$
 
-计算 $\psi(\omega)$ 时，我们在有限步内将任何的 $\psi(n)$ 加入集合，它们通过任何的加法组合都能达到 $\omega^\omega$ 以下的数，但是达不到它本身。因此，$\psi(x) = \omega^\omega$。
+计算 $\psi(\omega)$ 时，我们在有限步内将任何的 $\psi(n)$ 加入集合，它们通过任何的加法组合都能达到 $\omega^\omega$ 以下的数，但是达不到它本身。因此，$\psi(\omega) = \omega^\omega$。
 
 我们可以猜想，$\psi(x) = \omega^x$：
 $\psi(\omega+1) = \psi(\psi(0)+1) = \omega^{\omega+1}$
@@ -66,3 +67,78 @@ $\psi(\psi(\psi(\cdots))) = \omega^{\omega^\cdots} = \varepsilon_0 = \psi(\varep
 这种情况一直持续下去，让我们计算 $\psi(\Omega)$。由于任何的小于 $\Omega$ 的 $\alpha$ 都有 $\psi(\alpha)<\varepsilon_0$，$\psi(\Omega) = \varepsilon_0$，看起来我们依然被卡住了。
 
 但是，在计算 $\psi(\Omega+1)$ 时，$\varepsilon_0 = \psi(\Omega)$ **是可以被有限表示的**，而 $\varepsilon_0$ 也将出现在 $C(\Omega+1)$ 中，我们有：$\psi(\Omega+1) = \varepsilon_0 \omega$，我们在 $\Omega$ 的帮助下跳出了这个不动点，而 $\psi$ 将 $\Omega$ 塌缩成 $\varepsilon_0$。
+
+继续：
+$\psi(\Omega+2) = \varepsilon_0 \omega^2$
+$\psi(\Omega+\psi(0)) = \varepsilon_0 \omega^\omega$
+$\psi(\Omega+\psi(\psi(0))) = \varepsilon_0 \omega^{\omega^\omega}$
+$\psi(\Omega + \psi(\Omega)) = \psi(\Omega+\psi(\psi(\psi(\cdots)))) = \varepsilon_0^2$。我们这里并没有被卡住，因为 $\psi(\Omega)$ 是允许存在的。
+$\psi(\Omega + \psi(\Omega)+\psi(\Omega)) = \varepsilon_0^3$
+$\psi(\Omega + \psi(\Omega + 1)) = \varepsilon_0^{\omega}$
+$\psi(\Omega + \psi(\Omega + 1) + \psi(\Omega + 1)) = \varepsilon_0^{\omega2}$
+$\psi(\Omega + \psi(\Omega + 2)) = \varepsilon_0^{\omega^2}$
+$\psi(\Omega + \psi(\Omega + \psi(0))) = \varepsilon_0^{\omega^\omega}$
+$\psi(\Omega + \psi(\Omega + \psi(\Omega))) = \varepsilon_0^{\varepsilon_0}$
+$\psi(\Omega + \psi(\Omega + \psi(\Omega) + 1)) = \varepsilon_0^{\varepsilon_0\omega}$
+$\psi(\Omega + \psi(\Omega + \psi(\Omega) + \psi(\Omega))) = \varepsilon_0^{\varepsilon_0^2}$
+$\psi(\Omega + \psi(\Omega + \psi(\Omega + 1))) = \varepsilon_0^{\varepsilon_0^\omega}$
+$\psi(\Omega + \psi(\Omega + \psi(\Omega + \psi(0)))) = \varepsilon_0^{\varepsilon_0^{\omega^\omega}}$
+$\psi(\Omega + \psi(\Omega + \psi(\Omega + \psi(\Omega)))) = \varepsilon_0^{\varepsilon_0^{\varepsilon_0}}$
+
+$\psi(\Omega + (1,0)) = \varepsilon_1$，这里使用了弱Veblen模式的记号作为不动点的简写，而这个序数并没有被有限的表达。也就是说 $\psi(\Omega + \varepsilon_1) = \varepsilon_1$, $\varepsilon_1 = \psi(\Omega+\varepsilon_1 + 1) = \psi(\Omega+\varepsilon_1 + 2) = \cdots$，最后，我们再一次引入 $\Omega$ 去将不动点的有限运算折叠成一个运算：$\psi(\Omega2) = \psi(\Omega + \Omega) = \varepsilon_1$。
+
+我们可以总结一下一个不严格的 OCF 的计算方式：
+
+1. $\psi(0) = \omega$
+2. $\psi(\alpha+1) = \psi(\alpha)\omega$，如果 $\psi(\alpha)$ 是一个被有限表达的序数。
+3. $\psi(\# \sim \Omega) = \psi(\# \sim (1,0))$，其中 $\#$ 是一个表达式，$\#\sim \Omega$ 表示这个表达式的末端是 $\Omega$。这个规则解释起来就是“如果表达式的末端是 $\Omega$，它所折叠的便是将 $\Omega$ 变成自变量产生的函数的首个不动点。
+
+### $\psi$ 函数的枚举
+
+$\psi(0) = \omega$
+$\psi(1) = \omega^2$
+$\psi(2) = \omega^3$
+$\psi(\omega) = \omega^\omega$
+$\psi(\psi(0)+1) = \omega^{\omega+1}$
+$\psi(\psi(0)+\psi(0)) = \omega^{\omega+2}$
+$\psi(\psi(1)) = \omega^{\omega^2}$
+$\psi(\psi(\psi(0))) = \omega^{\omega^\omega}$
+$\psi(\Omega) = \psi((1,0)) = \varepsilon_0$
+$\psi(\Omega+1) = \varepsilon_0 \omega$
+$\psi(\Omega+2) = \varepsilon_0 \omega^2$
+$\psi(\Omega+\psi(0)) = \varepsilon_0 \omega^\omega$
+$\psi(\Omega+\psi(\psi(0))) = \varepsilon_0 \omega^{\omega^\omega}$
+$\psi(\Omega + \psi(\Omega)) = \varepsilon_0^2$
+$\psi(\Omega + \psi(\Omega)+ \psi(\Omega)) = \varepsilon_0^3$
+$\psi(\Omega + \psi(\Omega + 1)) = \varepsilon_0^{\omega}$
+$\psi(\Omega + \psi(\Omega + 1) + \psi(\Omega + 1)) = \varepsilon_0^{\omega2}$
+$\psi(\Omega + \psi(\Omega + 2)) = \varepsilon_0^{\omega^2}$
+$\psi(\Omega + \psi(\Omega + \psi(0))) = \varepsilon_0^{\omega^\omega}$
+$\psi(\Omega + \psi(\Omega + \psi(\Omega))) = \varepsilon_0^{\varepsilon_0}$
+$\psi(\Omega + \psi(\Omega + \psi(\Omega) + 1)) = \varepsilon_0^{\varepsilon_0\omega}$
+$\psi(\Omega + \psi(\Omega + \psi(\Omega) + \psi(\Omega))) = \varepsilon_0^{\varepsilon_0^2}$
+$\psi(\Omega + \psi(\Omega + \psi(\Omega + 1))) = \varepsilon_0^{\varepsilon_0^\omega}$
+$\psi(\Omega + \psi(\Omega + \psi(\Omega + \psi(0)))) = \varepsilon_0^{\varepsilon_0^{\omega^\omega}}$
+$\psi(\Omega + \psi(\Omega + \psi(\Omega + \psi(\Omega)))) = \varepsilon_0^{\varepsilon_0^{\varepsilon_0}}$
+$\psi(\Omega2) = \psi(\Omega + (1,0)) = \varepsilon_1$
+$\psi(\Omega2 + 1) = \varepsilon_1 \omega$
+$\psi(\Omega2 + \psi(\Omega)) = \varepsilon_1 \varepsilon_0$
+$\psi(\Omega2 + \psi(\Omega2)) = \varepsilon_1^2$
+$\psi(\Omega2 + \psi(\Omega2+1)) = \varepsilon_1^\omega$
+$\psi(\Omega2 + \psi(\Omega2+\psi(\Omega))) = \varepsilon_1^{\varepsilon_0}$
+$\psi(\Omega2 + \psi(\Omega2+\psi(\Omega2))) = \varepsilon_1^{\varepsilon_1}$
+$\psi(\Omega2 + \psi(\Omega2+\psi(\Omega2+\psi(\Omega2)))) = \varepsilon_1^{\varepsilon_1^{\varepsilon_1}}$
+$\psi(\Omega3) = \psi(\Omega2 + (1,0)) = \varepsilon_2$
+$\psi(\Omega4) = \psi(\Omega2 + (1,0)) = \varepsilon_3$
+$\psi(\Omega \omega) = \psi(\Omega + \Omega + \cdots) = \varepsilon_\omega$
+
+我们到此为止了，因为 $\Omega\omega = \Omega + \Omega + \cdots$ 也是不能由有限次加法得到的，因此不会出现在 $C$ 中，此后的函数值都不会变化了。
+
+此外，$\Omega3$ 这样的写法并不是标准的写法，想要标准的表达它需要写成 $\Omega+\Omega+\Omega$，因此在构造 $C$ 的过程中并没有乘法的出现。
+
+## 关于本章节的一些评论
+
+到此为止，我们仅仅到达了 $\psi(\Omega \omega) = \varphi(1,\omega)$ 就停住了，但是序数塌缩函数引入了一个全新的表达大序数的方法：我们使用越来越高层级的非递归序数来塌缩成越来越复杂的递归序数。在下一节中，我们将引入 $\Omega_2$ 之后的非递归序数，从此之后我们就能看到序数塌缩函数的强大之处。
+
+此外，序数塌缩函数可以通过修改定义产生不同的小版本。
+在一些版本中，$\psi(\alpha+1) = \psi(\alpha)+1$。在另一些版本中，$\psi(\alpha+1) = \psi(\alpha)\uparrow\uparrow \omega$。我们此后会发现其实这些定义只会在函数的最开始的一些地方拉开差距，在到达某一个点之后，函数之间的差距会被抹平。在看到使用 OCF 进行符号分析的时候，请留心观察使用的 OCF 的版本和行为。
