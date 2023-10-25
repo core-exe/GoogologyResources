@@ -6,7 +6,7 @@
 如果没有 $\psi$ 和 $\Omega$，从 $\{0,1\}$ 出发进行有限次加法无法达到 $\omega$。类似的，在上一章的结尾，我们达到了 $\Omega \omega$，从 $\{0,1,\Omega\}$ 开始进行有限次加法无法达到它。
 因此，我们也可以像上一章所做的事情一样，引入另一个非递归序数 $\Omega_2$ 和另一个序数塌缩函数 $\psi_1$ 来表示 $\Omega$ 之后的更为复杂的结构：
 
-1. $C_0^0(x) = \{0,1,\Omega,\Omega_2\}, C_0^1(x) = \Omega \cup \{\Omega_2\}$
+1. $C_0^0(x) = \{0,1,\Omega,\Omega_2\}, C_0^1(x) = \Omega \cup \{\Omega, \Omega_2\}$
 2. $C_{n+1}^i(x) = \{\alpha+\beta, \psi(\gamma), \psi_1(\gamma) | \alpha,\beta,\gamma \in C_n^i(x), \gamma < x\}$
 3. $C^i(x) = \bigcup_{n<\omega} C_n^i(x)$
 4. $\psi(x) = \sup C^0(x) \cap \Omega$
@@ -185,7 +185,7 @@ $\psi(\psi_1(\psi_1(\Omega) + \psi_1(0))) = \psi(\Omega^{\Omega+\omega}) = \varp
 $\psi(\psi_1(\psi_1(\Omega)2)) = \psi(\Omega^{\Omega 2}) = \varphi(2,0,0)$
 $\psi(\psi_1(\psi_1(\Omega + 1))) = \psi(\Omega^{\Omega \omega}) = \varphi(\omega,0,0)$
 $\psi(\psi_1(\psi_1(\Omega 2))) = \psi(\Omega^{\Omega^2}) = \varphi(1,0,0,0)$
-$\psi(\psi_1(\psi_1(\Omega 3))) = \psi(\Omega^{\Omega^3}) = \varphi(2,0,0,0)$
+$\psi(\psi_1(\psi_1(\Omega 3))) = \psi(\Omega^{\Omega^3}) = \varphi(1,0,0,0,0)$
 $\psi(\psi_1(\psi_1(\psi_1(0)))) = \psi(\Omega^{\Omega^\omega}) = \varphi(1@\omega)$
 $\psi(\psi_1(\psi_1(\psi_1(0)2))) = \psi(\Omega^{\Omega^{\omega2}}) = \varphi(1@\omega2)$
 $\psi(\psi_1(\psi_1(\psi_1(\psi(\Omega))))) = \psi(\Omega^{\Omega^{\psi(\Omega)}}) = \varphi(1@\varphi(1,0))$
@@ -194,30 +194,36 @@ $\psi(\psi_1(\psi_1(\psi_1(\Omega)))) = \psi(\Omega^{\Omega^{\Omega}}) = \varphi
 > 欢迎加入国内的大数数学交流群！
 > 群号：930971194
 
-$\psi(\psi_1(\psi_1(\psi_1(\Omega)))2) = \psi(\Omega^{\Omega^{\Omega}}2) = \varphi(1@\varphi(1@(1,0)), 1)$
-$\psi(\psi_1(\psi_1(\psi_1(\Omega))+\Omega)) = \psi(\Omega^{\Omega^{\Omega}+1}) = \varphi(1@\varphi(1@(1,0)), 1@1)$
-$\psi(\psi_1(\psi_1(\psi_1(\Omega))+\psi_1(\Omega))) = \psi(\Omega^{\Omega^{\Omega}+\Omega}) = \varphi(1@\varphi(1@(1,0)), 1@2)$
-$\psi(\psi_1(\psi_1(\psi_1(\Omega))+\psi_1(\psi_1(0)))) = \psi(\Omega^{\Omega^{\Omega}+\Omega^\omega}) = \varphi(1@\varphi(1@(1,0)), 1@\omega)$
-$\psi(\psi_1(\psi_1(\psi_1(\Omega))2)) = \psi(\Omega^{\Omega^{\Omega} 2}) = \varphi(2@\varphi(1@(1,0)))$
-$\psi(\psi_1(\psi_1(\psi_1(\Omega) + \Omega))) = \psi(\Omega^{\Omega^{\Omega+1}}) = \varphi(1@\varphi(1@(1,0))+1)$
-$\psi(\psi_1(\psi_1(\psi_1(\Omega)2))) = \psi(\Omega^{\Omega^{\Omega2}}) = \varphi(1@(1,1))$
-$\psi(\psi_1(\psi_1(\psi_1(\Omega+1)))) = \psi(\Omega^{\Omega^{\Omega\omega}}) = \varphi(1@(1,\omega))$
-$\psi(\psi_1(\psi_1(\psi_1(\Omega 2)))) = \psi(\Omega^{\Omega^{\Omega^2}}) = \varphi(1@(2,0))$
-$\psi(\psi_1(\psi_1(\psi_1(\Omega 2) + \Omega))) = \psi(\Omega^{\Omega^{\Omega^2+1}}) = \varphi(1@\varphi(1@(2,0))+1)$
-$\psi(\psi_1(\psi_1(\psi_1(\Omega 2) + \psi_1(\Omega)))) = \psi(\Omega^{\Omega^{\Omega^2+\Omega}}) = \varphi(1@(1,\varphi(1@(2,0))+1))$
-$\psi(\psi_1(\psi_1(\psi_1(\Omega 2)2))) = \psi(\Omega^{\Omega^{\Omega^2 2}}) = \varphi(1@(2,1))$
-$\psi(\psi_1(\psi_1(\psi_1(\Omega 3)))) = \psi(\Omega^{\Omega^{\Omega^3}}) = \varphi(1@(3,0))$
-$\psi(\psi_1(\psi_1(\psi_1(\psi_1(0))))) = \psi(\Omega^{\Omega^{\Omega^\omega}}) = \varphi(1@(\omega,0))$
-$\psi(\psi_1(\psi_1(\psi_1(\psi_1(\Omega))))) = \psi(\Omega^{\Omega^{\Omega^\Omega}}) = \varphi(1@(1,0,0))$
-$\psi(\psi_1(\psi_1(\psi_1(\psi_1(\psi_1(0)))))) = \psi(\Omega^{\Omega^{\Omega^{\Omega^\omega}}}) = \varphi(1@(1@\omega))$
-$\psi(\psi_1(\psi_1(\psi_1(\psi_1(\psi_1(\Omega)))))) = \psi(\Omega^{\Omega^{\Omega^{\Omega^\Omega}}}) = \varphi(1@(1@(1,0)))$
-$\psi(\psi_1(\psi_1(\psi_1(\psi_1(\psi_1(\psi_1(0))))))) = \psi(\Omega^{\Omega^{\Omega^{\Omega^{\Omega^\omega}}}}) = \varphi(1@(1@(\omega,0)))$
-$\psi(\psi_1(\psi_1(\psi_1(\psi_1(\psi_1(\psi_1(\Omega))))))) = \psi(\Omega^{\Omega^{\Omega^{\Omega^{\Omega^\Omega}}}}) = \varphi(1@(1@(1,0,0)))$
-$\psi(\psi_1(\psi_1(\psi_1(\psi_1(\psi_1(\psi_1(\psi_1(0)))))))) = \psi(\Omega^{\Omega^{\Omega^{\Omega^{\Omega^{\Omega^\omega}}}}}) = \varphi(1@(1@(1@\omega)))$
-$\psi(\psi_1(\psi_1(\psi_1(\psi_1(\psi_1(\psi_1(\psi_1(\Omega)))))))) = \psi(\Omega^{\Omega^{\Omega^{\Omega^{\Omega^{\Omega^\Omega}}}}}) = \varphi(1@(1@(1@(1,0))))$
-$\psi(\Omega_2) = \psi(\psi_1(\Omega_2)) = \text{BHO}$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))) + \Omega) = \psi(\Omega^{\Omega^{\Omega}}+\Omega) = \varphi(1,\varphi(1@(1,0))+1)$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))) + \psi_1(\Omega)) = \psi(\Omega^{\Omega^{\Omega}}+\Omega^2) = \varphi(2,\varphi(1@(1,0))+1)$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))) + \psi_1(\psi_1(\Omega))) = \psi(\Omega^{\Omega^{\Omega}}+\Omega^\Omega) = \varphi(1,0,\varphi(1@(1,0))+1)$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))) + \psi_1(\psi_1(\psi_1(0)))) = \psi(\Omega^{\Omega^{\Omega}}+\Omega^{\Omega^\omega}) = \varphi(1@\omega,\varphi(1@(1,0))+1)$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))) + \psi_1(\psi_1(\psi_1(\psi(\psi_1(\psi_1(\psi_1(\Omega)))))))) = \psi(\Omega^{\Omega^{\Omega}}+\Omega^{\Omega^{\psi(\Omega^{\Omega^{\Omega}})}}) = \varphi(1@\varphi(1@(1,0)), 1)$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))) + \psi_1(\psi_1(\psi_1(\psi(\psi_1(\psi_1(\psi_1(\Omega))))))+\Omega)) = \psi(\Omega^{\Omega^{\Omega}}+\Omega^{\Omega^{\psi(\Omega^{\Omega^{\Omega}})}+1}) = \varphi(1@\varphi(1@(1,0)), 1@1)$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))) + \psi_1(\psi_1(\psi_1(\psi(\psi_1(\psi_1(\psi_1(\Omega))))))+\psi_1(0))) = \psi(\Omega^{\Omega^{\Omega}}+\Omega^{\Omega^{\psi(\Omega^{\Omega^{\Omega}})}+\omega}) = \varphi(1@\varphi(1@(1,0)), \omega @1)$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))) + \psi_1(\psi_1(\psi_1(\psi(\psi_1(\psi_1(\psi_1(\Omega))))))+\psi_1(\Omega))) = \psi(\Omega^{\Omega^{\Omega}}+\Omega^{\Omega^{\psi(\Omega^{\Omega^{\Omega}})}+\Omega}) = \varphi(1@\varphi(1@(1,0)), 1@2)$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))) + \psi_1(\psi_1(\psi_1(\psi(\psi_1(\psi_1(\psi_1(\Omega))))))+\psi_1(\Omega2))) = \psi(\Omega^{\Omega^{\Omega}}+\Omega^{\Omega^{\psi(\Omega^{\Omega^{\Omega}})}+\Omega^2}) = \varphi(1@\varphi(1@(1,0)), 1@3)$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))) + \psi_1(\psi_1(\psi_1(\psi(\psi_1(\psi_1(\psi_1(\Omega))))))+\psi_1(\psi_1(0)))) = \psi(\Omega^{\Omega^{\Omega}}+\Omega^{\Omega^{\psi(\Omega^{\Omega^{\Omega}})}+\Omega^\omega}) = \varphi(1@\varphi(1@(1,0)), 1@\omega)$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))) + \psi_1(\psi_1(\psi_1(\psi(\psi_1(\psi_1(\psi_1(\Omega))))))2)) = \psi(\Omega^{\Omega^{\Omega}}+\Omega^{\Omega^{\psi(\Omega^{\Omega^{\Omega}})}2}) = \varphi(2@\varphi(1@(1,0)))$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))) + \psi_1(\psi_1(\psi_1(\psi(\psi_1(\psi_1(\psi_1(\Omega)))))+1))) = \psi(\Omega^{\Omega^{\Omega}}+\Omega^{\Omega^{\psi(\Omega^{\Omega^{\Omega}})}\omega}) = \varphi(\omega @\varphi(1@(1,0)))$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))) + \psi_1(\psi_1(\psi_1(\psi(\psi_1(\psi_1(\psi_1(\Omega)))))+\Omega))) = \psi(\Omega^{\Omega^{\Omega}}+\Omega^{\Omega^{\psi(\Omega^{\Omega^{\Omega}})+1}}) = \varphi(1 @\varphi(1@(1,0))+1)$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))) + \psi_1(\psi_1(\psi_1(\psi(\psi_1(\psi_1(\psi_1(\Omega)))))2))) = \psi(\Omega^{\Omega^{\Omega}}+\Omega^{\Omega^{\psi(\Omega^{\Omega^{\Omega}})2}}) = \varphi(1 @\varphi(1@(1,0))2)$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))) + \psi_1(\psi_1(\psi_1(\psi(\psi_1(\psi_1(\psi_1(\Omega))))+1)))) = \psi(\Omega^{\Omega^{\Omega}}+\Omega^{\Omega^{\psi(\Omega^{\Omega^{\Omega}})\omega}}) = \varphi(1 @\varphi(1@(1,0))\omega)$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))) + \psi_1(\psi_1(\psi_1(\psi(\psi_1(\psi_1(\psi_1(\Omega))))2)))) = \psi(\Omega^{\Omega^{\Omega}}+\Omega^{\Omega^{\psi(\Omega^{\Omega^{\Omega}}+\psi(\Omega^{\Omega^{\Omega}}))}}) = \varphi(1 @\varphi(1@(1,0))^2)$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))) + \psi_1(\psi_1(\psi_1(\psi(\psi_1(\psi_1(\psi_1(\Omega))) + \Omega))))) = \psi(\Omega^{\Omega^{\Omega}}+\Omega^{\Omega^{\psi(\Omega^{\Omega^{\Omega}}+\Omega)}}) = \varphi(1 @\varphi(1,\varphi(1@(1,0))+1))$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega)))2) = \psi(\Omega^{\Omega^\Omega}2) = \varphi(1@(1,0),1)$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))+\Omega)) = \psi(\Omega^{\Omega^\Omega+1}) = \varphi(1@(1,0),1@1)$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))+\psi_1(\Omega))) = \psi(\Omega^{\Omega^\Omega+\Omega}) = \varphi(1@(1,0),1@2)$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega))2)) = \psi(\Omega^{\Omega^\Omega2}) = \varphi(2@(1,0))$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega)+\Omega))) = \psi(\Omega^{\Omega^{\Omega+1}}) = \varphi(1@(1,1))$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega)2))) = \psi(\Omega^{\Omega^{\Omega2}}) = \varphi(1@(2,0))$
+$\psi(\psi_1(\psi_1(\psi_1(\Omega2)))) = \psi(\Omega^{\Omega^{\Omega^2}}) = \varphi(1@(1,0,0))$
+$\psi(\psi_1(\psi_1(\psi_1(\psi_1(0))))) = \psi(\Omega^{\Omega^{\Omega^\omega}}) = \varphi(1@(1@\omega))$
+$\psi(\psi_1(\psi_1(\psi_1(\psi_1(\Omega))))) = \psi(\Omega^{\Omega^{\Omega^\Omega}}) = \varphi(1@(1@(1,0)))$
+$\psi(\psi_1(\psi_1(\psi_1(\psi_1(\psi_1(\Omega)))))) = \psi(\Omega^{\Omega^{\Omega^{\Omega^\Omega}}}) = \varphi(1@(1@(1@(1,0))))$
+$\psi(\Omega_2) = \psi(\psi_1(\Omega_2)) = \varphi(1@(1@(1@\cdots)))$
 
-这个形式的 BHO 应该是大部分人刚开始学习大数数学时见到的形式。此前讲到的 Veblen 函数和它的拓展就确实到此为止了。
+这个形式的 BHO 应该是大部分人刚开始学习大数数学时见到的形式。此前讲到的 Veblen 函数和它的拓展就确实到此为止了，我们再也不用被这个东西折磨了。
 
 $\psi(\Omega_2+1)$
 $\psi(\Omega_2+\psi(0))$
