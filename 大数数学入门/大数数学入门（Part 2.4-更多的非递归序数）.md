@@ -1,4 +1,5 @@
-# 大数数学入门（Part 2.4-BO）
+#! https://zhuanlan.zhihu.com/p/663384314
+# 大数数学入门（Part 2.4-更多的非递归序数）
 
 ## 引入 $\Omega_3$
 
@@ -83,7 +84,7 @@ $$
 
 ## 引入序数多个非递归序数
 
-我们或许可以在最开始的 $C(0)$ 中加入更多的 $\omega$，但是没有这个必要：我们不如直接将 $x\mapsto \Omega_x$ 加入进去。我们使用 $R_2(S)$ 来表示 $S$ 之中的非递归序数构成的子集。
+我们或许可以在最开始的 $C(0)$ 中加入更多的 $\Omega$，但是没有这个必要：我们不如直接将 $x\mapsto \Omega_x$ 加入进去。我们使用 $R_2(S)$ 来表示 $S$ 之中的非递归序数构成的子集。
 
 1. $C_0^{\Omega}(x) = \{0,1\}$, $C_0^{\Omega_{\alpha + 1}}(x) = \Omega_{\alpha} \cup \{\Omega_\alpha\}$
 2. $C_{n+1}^\nu(x) = \{\alpha + \beta, \psi_\delta(\gamma), \Omega_\alpha | \alpha, \beta, \gamma \in C_n(x), \gamma < x, \delta \in R_2(C^\nu_n(x))\}$
