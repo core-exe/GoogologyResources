@@ -104,7 +104,7 @@ $\cdots$
 每 $\omega$ 个归为一组取上界，这是 $\Pi_1-$ 的定义。同时，从这里开始，$\psi_{\Omega_2}$ 开始发挥作用：
 
 $\psi(\psi_{\text{2nd } 2}(1)) = \psi((1-)^{0 \text{ aft } 2}) = \psi(1-(1-)^{(2)}) = \psi(1-\psi_{\text{2nd } 2}(0))$
-$\psi(0 \text{ aft } \psi_{\text{2nd } 2}(1)) = 1-  \psi(\psi_{\text{2nd } 2}(1)) $
+$\psi(0 \text{ aft } \psi_{\text{2nd } 2}(1)) = 1-  \psi(\psi_{\text{2nd } 2}(1))$
 $\psi((1-)^{(2)} \text{ aft } \psi_{\text{2nd } 2}(1)) = (1-)^{(1,0)} \psi(\psi_{\text{2nd } 2}(1))$
 $\psi(\text{2nd } (1-)^{(2)} \text{ aft } \psi_{\text{2nd } 2}(1)) = (1-)^{(1,0)} \psi((1-)^{(2)} \text{ aft } \psi_{\text{2nd } 2}(1))$
 $\psi(\text{2nd }\psi_{\text{2nd } 2}(1)) = \psi(\psi_{\text{2nd } 2}(1) \text{ aft } \psi_{\text{2nd } 2}(1)) = \psi(1-(1-)^{(2)} \text{ aft } \psi_{\text{2nd } 2}(1))$
@@ -152,6 +152,6 @@ $\psi(\psi_{\text{3rd 2}}(1))$
 
 1. $\psi_{2 \text{ aft }X}(0) = X$（特殊的，$\psi_{(2)}(0) = 1$）
 2. $\psi_{2 \text{ aft }X}(0\text{ aft } \alpha) = 1 - \psi_{2 \text{ aft }X}(\alpha)$，如果形式标准。
-3. $\psi_{2 \text{ aft }X}((1-)^{2 \text{ aft }} \text{ aft } \alpha) = \psi_{2 \text{ aft }X}((1,0) \text{ aft } \alpha)$，如果形式标准。如果最外层的下标小于 $2 \text{ aft }X$，那么最外层的下标不变。
+3. $\psi_{2 \text{ aft }X}((1-)^{2 \text{ aft } X} \text{ aft } \alpha) = \psi_{2 \text{ aft }X}((1,0) \text{ aft } \alpha)$，如果形式标准。如果最外层的下标小于 $2 \text{ aft }X$，那么最外层的下标不变。
 
 说到底，这里讨论的依然是以前的 OCF，只不过现在套上了反射的皮。所折叠的东西实际上也只是 $(1-)^\cdots (1-)^X$ 这样的形式，而没有试图折叠 $(1-)^\cdots 2$。这件事情留给下一节。
