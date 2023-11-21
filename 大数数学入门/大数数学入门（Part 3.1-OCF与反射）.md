@@ -150,7 +150,7 @@ $\psi(\psi_{\text{3rd 2}}(1))$
 
 那么，对于这三个规则，我们上面的 OCF 是这样计算的：
 
-1. $\psi_{2 \text{ aft }X}(0) = X$（特殊的，$\psi_{(2)}(0) = 1$）
+1. $\psi_{2 \text{ aft }X}(0) = (1-)^X$（特殊的，$\psi_{(2)}(0) = \Pi_0 \text{ aft } 0$）
 2. $\psi_{2 \text{ aft }X}(0\text{ aft } \alpha) = 1 - \psi_{2 \text{ aft }X}(\alpha)$，如果形式标准。
 3. $\psi_{2 \text{ aft }X}((1-)^{2 \text{ aft } X} \text{ aft } \alpha) = \psi_{2 \text{ aft }X}((1,0) \text{ aft } \alpha)$，如果形式标准。如果最外层的下标小于 $2 \text{ aft }X$，那么最外层的下标不变。
 
